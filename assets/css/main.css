@@ -1736,3 +1736,33 @@ input, select, textarea {
 		  table.idealjobtable tfoot td {
 			font-size: 11px;
 		  }
+
+		#data p {
+			text-align: center;
+		  }
+		
+		#industry4 p {
+			text-align: left;
+	
+		}
+
+		#data img {
+			display: block;
+			margin-left: auto;
+			margin-right: auto;
+			width: 50%;
+
+		}
+
+		#data h1 {
+			text-align: center;
+		}
+
+		#data h2 {
+			text-align: center;
+		}
+
+		#data h3 {
+			text-align: center;
+		}
+
