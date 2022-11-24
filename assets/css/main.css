@@ -1737,32 +1737,21 @@ input, select, textarea {
 			font-size: 11px;
 		  }
 
-		#data p {
-			text-align: center;
+		
+
+		code {
+			font-size: 22px;
+			
+		}
+
+		pre {
+			overflow-x: auto;
+			white-space: pre-wrap;
+			word-wrap: break-word;
+			zoom: 70%;
 		  }
 		
-		#industry4 p {
-			text-align: left;
-	
-		}
+		
 
-		#data img {
-			display: block;
-			margin-left: auto;
-			margin-right: auto;
-			width: 50%;
-
-		}
-
-		#data h1 {
-			text-align: center;
-		}
-
-		#data h2 {
-			text-align: center;
-		}
-
-		#data h3 {
-			text-align: center;
-		}
+		
 
