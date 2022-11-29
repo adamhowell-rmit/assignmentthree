@@ -241,13 +241,11 @@
 								<h2 class="major"> Group Project Idea "Goblin" </h2>
 								<h2>Project Description (Concept)  </h2>
 
-							    <p>Unlike chat aggregators for managing chat interactions across multiple platforms that work by sending a copy of the message to a central location. Goblin will be a Python based application that text is pasted into, allowing for “retro-active” recording of text history. </p>
+							    <p>Goblin is our group project, it started out as a fundamentally stupid, clunky and useless idea called Slack’as. The idea of Slack’as was to somehow take the content of the forums RMIT uses, and put that on a slack server, the best way I figured “how” that could be done was to take the forum activity emails, forward them to a slack bot on a slack server, then post those forum posts to the relevant pre-made channels in the server. The main problem with this was that it relied on using the activity emails, and they are just not designed to be used like that. For example, they don’t include the entirety of longer posts, just the first few lines, they might have their format changed later down the line, throwing our bot into disarray. But the main glaring issue with Slack’as was sorting all the forum posts based of the limited information in the emails, the project was just too reliant on one source of information.  </p>
 
-								<p>The point of Goblin is to allow the user to manage small to medium sized chat histories so that they can be organized, searched, and posted on different services.  </p>
+								<p>Goblin was the idea the group arrived at for assessment 2, it was based off the same principle; taking text from one social media and putting it somewhere else in a usable format. But it was to be its own application, something that a user could copy paste their own text into, to be formatted and potentially pasted somewhere else. Goblin also had a more realistic approach what we could and couldn’t achieve at our skill level and was more aligned with the interests and capabilities of the group than previous versions.  </p>
 
-								<p>Goblin will be an application with some minimal UI a text box, the Idea is that the user selects all the relevant channel history and copy pastes it into the text box (hence the name, Goblin gobbles the text you put IN). The application then separates the wall of text into individual messages and records the name of the user who posted the message, the time stamp on the message, and the content of the message. Those messages will form a “snapshot” which can then be saved to an existing history or saved as a new history. </p>
-
-								<p>The aim is to make it easy to store all of one’s chat histories so that they can be searched on and organized, so that it can be easily moved to different platforms or simply saved for later. </p>
+								
 								<br>
 
 								
@@ -350,22 +348,57 @@
 								<p>The ways different services format their content need to be accounted for, ideally Goblin should be able to store most common forms of written communication emails, slack messages, discord messages and forum posts etc. Goblin will need to have a way of transforming the content of all these formats so that it can filter the information properly. This will be developed by the group in python.   </p>
 
 								<br>
+
+								<h3>Why develop Goblin?</h3>
+
+								<p>Goblin is a cool project from a developer point of view, it’s straightforward and touches on a lot of areas in demand in today’s job market. It's also very do-able from a proof-of-concept point of view. </p>
+
+								<p>Aiding in communication: If there’s one thing that’s required by all our groups’ ideal career paths, it’s communication skills, Goblin is a project designed to augment traditional tools for communication. It was born from frustration with the avenues required for us to use as students. If it was ever made into a complete application, it would provide the development team and potentially customers with valuable data around how different communication tools are used. </p>
+
+								<p>It's an SQL based project:</p>
+
+								<img src="images/activeselections.PNG" width="500">
+
+								<p>In Assessment 2, when we looked at the most in-demand skills that the most in demand skill sets that we could explore in a project at our skill level, SQL was the obvious choice. SQL is THE highest demand skill in the 2017-2018 burning glass study. The language used to create and manage databases, and in this time in tech where data driven decision making is all the rage, SQL is very relevant. </p>
+
+								<br>
+
+								<h3>What other "goblins" are out there? </h3>
+
+								<p>How else is the problem of having messages in one place, and needing them in another solved? </p>
+
+								<p>Well at the small-scale side, its handled by snip and sketch, you just “win+shift+s” and paste the relevant post wherever you want, nothing is more convenient or easier for an Indvidual to do. BUT it is problematic at scale, no one wants to catch up on a day’s worth of arguing over features in a google doc via screenshots. </p>
+
+								<p>At the other extreme is the fully automatic approach that companies like Zendesk use internally. Some Zendesk customers like epic games for example use discord to handle customer interactions, but the customer service people don’t use discord, they use the Zendesk text window, that window sends 2 copies of the message out, one to discord, and the other to the internal location that the customer service interactions are stored. This works well for the relatively massive scale that Zendesk operates at, but such a solution is hilariously over engineered for a single user and would be impossible for even a single full-time developer to maintain. </p>
+
+								<p>There are also SaaS companies like SimpleTexting or CallHub, which provide a way to personalize text message marketing to retailers. They gather and sell customer data to retailers to improve their SMS marketing. As part of that business, they manage databases of text messages. </p>
+
+
 								<br>
 								<br>
+								<br>
 
-								<h2>Detailed Description </h2>
+								<h1>Detailed Description </h1>
 
-								<h3>Aims</h3>
+								<h2>Aims</h2>
 
-								<p>The concept of Goblin is simple, it’s a multi-application text sorting tool. It’s estimated that the average business worker uses 9.4 different applications daily, that’s a LOT of applications for a single working day! All the information that is shared across the average working day is astronomical, but if we were to look at the amount of business working days in a year which was 261 days in the year 2021, that’s 2,453.4 applications on a yearly basis. </p>
+								<p>Goblin aims to be a middle of the road between screenshotting and a completely automated api-webhook type solution. Goblin should be easy to use, and provide a way for single users, and possibly small teams to manage their text data across multiple platforms. Our vision for Goblin is that one day a user could take an entire chat history of a discord server from which they’re about to lose access, and with a single ctrl-v have all that information saved.  </p>
 
-								<p>Professionally speaking, time is money. The longer an employee spends tracing information from one of the many applications used on their daily work schedule, the more money the employee can lose in. Goblin’s job is to assist with storing the information using a filing system, tagged and sourced by the user.  </p>
+								<p>Here are the main goals that need to be reached in order to produce the goblin we envision:   </p>
 
-								<p>Our goal is to bring this time spent searching for bits of information, down. With Goblin, that goal will be quite easy to achieve! </p>
+								<p>A user interface; in order Goblin for goblin to be an app, it needs a user interface, but there's more to it than that. There are elements such as generating snippet ID’s that ideally would be created when the data is entered. Additionally, since all the database interaction takes place through the UI, how useful the database is will largely depend on how usable the UI is. The preliminary concept for the UI is outlined in detail further into the document, but the goal of the UI is to make it as intuitive, and as useful as possible.  </p>
+
+								<p>The backend infrastructure; the backend in this context is “all the stuff that doesn’t facilitate human interactivity”. This is required for things like the databases in which the snippets are stored, the searching algorithms, the code required to launch the application, windows API functions, and the like, there’s so much in this category that due to our inexperience we don’t even know we need but sorting that out definitely constitutes a goal. </p>
+
+								<p>A message “sorter”; this is the most obviously fraught area of the project, frankly, having users paste large amounts of messages from an unknown source makes it a nightmare to isolate the Indvidual components. Even telling where one message ends and the next begins is extremely hard, because in the UI’s that these messages come from, they’re broken up into clearly separate messages by the UI, and the way it formats itself with profile pictures and such. As a group we haven't yet figured out any reliable way of sorting these messages without the use of a machine learning program, which we want to avoid, because a ML program will never be 100% accurate and any errors that it makes will be extremely obvious to users. So, sorting out the “sorting” issue is another main goal of the project. </p>
+
+								<p>We think Goblin has the potential to be developed into a web-based application, rather than a local based application. This will allow the model of the project to really come to life, with the potential of a subscription-based modelling service to allow the application to be used across not just PC/MacOS, but also smart devices.  </p>
+
+								<p>Goblin also has the potential to become automated, with information/text not being required to be entered by a user, but by the application “sniffing” for the information. We imagine this could be done by “Application migration/connections”, an example of this would be how Spotify connects to Discord and broadcasts what music you are listening to at the time to your friends/server mates. Automation of information storage will be a huge convenience to the user. </p>
 
 								<br>
 
-								<h3>Plans and Progress </h3>
+								<h2>UI Demonstration </h2>
 
 								<p>This is where we showcase a far more detailed plan on what Goblin will look like, and how the application will function.  </p>
 
@@ -419,7 +452,7 @@
 
 								<p>That wraps up the concept of Goblin, for now. This application will develop more as time progresses, new features will be added and easier ways to tag and save text will become available.  </p>
 
-								<p>At Team Unicorn, none of us have the skills required to make this application a reality (yet). This was a major dead-end in the hopes to build a demonstration for the application and use it in a single use scenario. However, we are extremely confident this will provide thorough insight into how Goblin will operate. </p>
+								<p>At Team Unicorn, none of us have the skills required to make this application a reality (yet). This was a major dead-end in the hopes to build a functioning demonstration for the application and use it in a single use scenario. However, we are extremely confident this will provide thorough insight into how Goblin will operate.  </p>
 
 								<br>
 								<br>
@@ -427,27 +460,220 @@
 
 								<h2>Scope and Limits</h2>
 
-								<p>As Goblin is currently designed for text and information storage/organising, the applications scope is well within sight. We say this because with technology today, there isn’t really a way to store information like there is with Goblin. However, the world of IT is growing at a rapid pace and will change the way the world operates. </p>
+								<p>As Goblin is currently designed for text and information storage/organising, the applications scope is well within sight. We say this because with technology today, there isn’t really a way to store information like there is with Goblin. However, the world of IT is growing at a rapid pace and will change the way the world operates.  </p>
 
 				
 
-								<p>We think Goblin has the potential to be developed into a web-based application, rather than a local based application. This will allow the model of the project to really come to life, with the potential of a subscription-based modelling service to allow the application to be used across not just PC/MacOS, but also smart devices.  </p>
+								<p>Despite all our far off hopes we talked about in the aims section, we have very concrete deliverables for a proof-of-concept version, we also know what a baseline “finished” version of goblin would look like, and both of those need to happen before a web version is to be put in the works.  </p>
+
+								<p>This breaks the project into 3 main phases of development and testing: </p>
+
+								<h3>Proof of concept: </h3>
+
+								<p>This is what's done so far, it’s what we’ve determined to be achievable in our timeframe and with our current skills, everything that would take more than an afternoon’s googling to learn is determined to be out of scope. </p>
 
 								
 
-								<p>Goblin also has the potential to become automated, with information/text not being required to be entered by a user, but by the application “sniffing” for the information. We imagine this could be done by “Application migration/connections”, an example of this would be how Spotify connects to Discord and broadcasts what music you are listening to at the time to your friends/server mates. Automation of information storage will be a huge convenience to the user. </p>
+								
 
 								<br>
 								<br>
 
 								<h2> Risks</h2>
 
-								<p>Since Goblin will be stored on local machines as an application & have no form of online capability, the risk for file/date corruption or loss is high. This could be in the form of hardware failure (HDDs, SSDs, USB flash drives etc) or local OS failures (Microsoft, MacOS etc). </p>
+								<p>Since Goblin will be stored on local machines as an application & have no form of online capability, the risk for file/date corruption or loss is high. This could be in the form of hardware failure (HDDs, SSDs, USB flash drives etc) or local OS failures (Microsoft, MacOS etc).  </p>
 
-								<p>A risk could be considered in the department of data breaches. Data should be encrypted locally, as well as have the ability for the Goblin to decrypt this date in real time to display the data as desired.   </p>
+								<p>A risk could be considered in the department of data breaches. Data should be encrypted locally, as well as have the ability for the Goblin to decrypt this date in real time to display the data as desired.  </p>
 
 
 
+								<br>
+								<br>
+								<br>
+
+								<h2>Input standardization, or sorting, demonstration </h2>
+
+								<table class="teststable">
+									<table class="idealjobtable">
+										<thead>
+										<tr>
+										<th>Week Number: </th>
+										<th>Expected Activity/Progress/Target/Milestone:</th>
+										
+										</tr>
+										</thead>
+										<tbody>
+										<tr>
+										<td>1 (week 7 of study period)  </td>
+										<td>All Unicorn members discuss Goblin project concepts and work out strengths and weaknesses. Discuss any complications that may arise during the project.   </td>
+										
+										</tr>
+										<tr>
+										<td>2 (week 8 of study period)   </td>
+										<td>All Unicorn members discuss Goblin tools and technologies; how we will use databases and what database system we will use.  </td>
+										
+										</tr>
+										<tr>
+										<td> 3 (week 9 of study period)  </td>
+										<td>Lachlan: learning about/practicing SQLite. <br>
+
+											Lucy: Working on assessment deliverables. <br>
+											
+											Declan: Working on assessment deliverables. <br>
+											
+											Courtney: Working on assessment deliverables. <br>
+											
+											Adam: Working on assessment deliverables.   </td>
+										
+										</tr>
+										<tr>
+										<td>4 (week 10 of study period)  </td>
+										<td>Lachlan: Working on code for Goblin. <br>
+
+											Lucy: Working on assessment deliverables. <br>
+											
+											Declan: Working on assessment deliverables. <br>
+											
+											Courtney: Working on assessment deliverables. <br>
+											
+											Adam: Working on assessment deliverables. </td>
+										
+										</tr>
+										
+										<tr>
+										<td>5 (week 11 of study period)  </td>
+										<td>Lachlan: Aim to have most if not all code completed. <br>
+
+											Lucy: Aim to have assigned assessment deliverables completed, assist others where needed. <br>
+											
+											Declan: Aim to have assigned assessment deliverables completed, assist others where needed.<br>
+											
+											Courtney: Aim to have assigned assessment deliverables completed, assist others where needed. <br>
+											
+											Adam: Aim to have assigned assessment deliverables completed, assist others where needed. <br>
+											
+											All Unicorn members revise assigned deliverables, discuss/raise any issues that arise.</td>
+
+										
+										<tr>
+											<td>6 (week 12 of study period) </td>
+											<td>All Unicorn members complete assigned assessment deliverables. Help other members where required to complete Assessment. <br>
+
+												Assessment is completed and submitted. <br>
+												
+												UI of Goblin is in development </td>
+
+										<tr>
+											<td>7</td>
+											<td>All Unicorn members meet and discuss items required for the next development phase of Goblin.  <br>
+
+												Discuss and allocate deliverables for future weeks. <br>
+												
+												UI of Goblin is in development </td>
+										</tr>
+
+										<td>8</td>
+											<td>All unicorn members work on assigned deliverables for alpha testing phase. <br>
+
+												UI of Goblin is completed.  <br>
+												
+												Alpha testing Beguins </td>
+										
+										<tr>
+											<td>9</td>
+											<td>All unicorn members work on assigned deliverables for alpha testing phase. <br>
+
+												UI of Goblin is mostly completed.  </td>
+										</tr>
+
+										<tr>
+											<td>10</td>
+											<td>Alpha testing ends. <br>
+
+												Report of Alpha testing findings produced. <br>
+												
+												All Unicorn members discus Alpha test findings and allocate tasks to remedy bugs/issues  </td>
+										</tr>
+
+										<tr>
+											<td>11</td>
+											<td>Alpha testing bugs/issues are worked on by all Unicorn members. <br>
+
+												Report of bug/issues that have been fixed is created. -Patch notes  </td>
+										</tr>
+
+										<tr>
+											<td>12</td>
+											<td>Bug/issues are continually worked on until fixed. <br>
+
+												Once all bug/issues are fixed.  <br>
+												
+												New patch notes created, and patch is released. <br>
+												
+												Unicorn members prepare for beta testing. <br>
+												
+												Beta testing Beguins.  </td>
+										</tr>
+
+										<tr>
+											<td>13</td>
+											<td>Beta testing Ends. <br>
+
+												Report of Beta testing findings produced. <br>
+												
+												All Unicorn members discus Beta test findings and allocate tasks to remedy bugs/issues. <br>
+												
+												All Unicorn members work on Beta testing bugs/issues. </td>
+										</tr>
+
+										<tr>
+											<td>14</td>
+											<td>All Unicorn members work on Beta testing bugs/issues. <br>
+
+												Report of bug/issues that have been fixed is created. -Patch notes  </td>
+										</tr>
+
+										<tr>
+											<td>15</td>
+											<td>Bug/issues are continually worked on until fixed. <br>
+
+												Once all bug/issues are fixed.  <br>
+												
+												New patch notes created, and patch is released. <br>
+												
+												Unicorn members prepare for 1.0 release.  </td>
+										</tr>
+
+										
+
+									
+
+											
+										</tr>
+										</tr>
+										</tr>
+										</tbody>
+										</table>
+
+										<br>
+
+								<h2> Testing </h2>
+
+								<p>Goblin has been created using SQLite and python coding languages. </p>
+
+								<p>Just like all coding languages there testing muct be done to ensure that the code is working as intended. Just like if you go to hospital we will also use triage to; Determine the severity of the bug or issue, which will allow us to prioritize the more serious or fatal bugs before handing the less serious ones.  </p>
+
+								<p>We have planned for 3 stages of testing;  </p>
+
+								<p>1: Testing during development. </p>
+
+								<p>2: Alpha Testing.</p>
+
+								<p>3: Beta Testing.</p>
+
+								<p>Testing during development is refering to the troubleshooting performed when the code is firstly created. When the coder is creating the code, they will perform constant checks to see if what they just entered works as intended. This may include using the built in print() module to check values of variables are certain places or running blocks of code and seeing if the expected outcome is received.  </p>
+
+								<br>
 								<br>
 								<br>
 								<br>
@@ -457,6 +683,22 @@
 									<br>
 									adamhowell-rmit.github.io. (n.d.). Team Unicorn - Group A40 - Assessment Two. [online] Available at: https://adamhowell-rmit.github.io/assignmenttwo/#ProjectIdeas [Accessed 23 Nov. 2022]. 
 									</p>
+								<br>
+								<p>Celeste Grupman, August 12, 2022 Why Learn SQL in 2022 (Analyzing Real Job Data)  
+
+									https://www.dataquest.io/blog/why-learn-sql/ </p>
+								<br>
+								<p>SimpleTexting, Refenced: 11/2022 
+
+									https://simpletexting.com/features/data-collection/ </p>
+								<br>
+								<p>CallHub, Refenced: 11/2022 
+
+									https://callhub.io/ </p>
+								<br>
+								<p>O’reilly, Refenced: 11/2022 
+
+									https://www.oreilly.com/library/view/ivor-hortons-beginning/9781118417034/xhtml/sec92.html</p>
 
 
 
